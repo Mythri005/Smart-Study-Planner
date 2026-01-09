@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#3b82f6" />
+    <meta
+      name="description"
+      content="Smart Study Planner - Plan, track, and manage study tasks efficiently"
+    />
+    <meta name="keywords" content="study, planner, tasks, education, productivity" />
+    <meta name="author" content="Smart Study Planner" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://studyplanner.example.com/" />
+    <meta property="og:title" content="Smart Study Planner" />
+    <meta property="og:description" content="Plan, track, and manage study tasks efficiently" />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://studyplanner.example.com/" />
+    <meta property="twitter:title" content="Smart Study Planner" />
+    <meta property="twitter:description" content="Plan, track, and manage study tasks efficiently" />
+    <meta property="twitter:image" content="%PUBLIC_URL%/og-image.png" />
+    
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <title>Smart Study Planner</title>
+    
+    <!-- Preconnect to improve performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    
+    <style>
+      /* Loading spinner styles */
+      .loading-spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: white;
+        animation: spin 1s ease-in-out infinite;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      /* Hide app until loaded */
+      #root:empty + .loading-spinner {
+        display: flex;
+      }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 5px;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 5px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+      
+      /* Selection color */
+      ::selection {
+        background-color: #3b82f6;
+        color: white;
+      }
+      
+      /* Focus styles for accessibility */
+      *:focus {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <div style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        z-index: 9999;
+      ">
+        <div style="max-width: 600px;">
+          <h1 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700;">
+            JavaScript Required
+          </h1>
+          <p style="font-size: 1.2rem; margin-bottom: 2rem; line-height: 1.6;">
+            Smart Study Planner requires JavaScript to run. Please enable JavaScript in your browser settings to use this application.
+          </p>
+          <div style="
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+          ">
+            <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">
+              How to enable JavaScript:
+            </h2>
+            <ul style="text-align: left; line-height: 1.8;">
+              <li><strong>Chrome:</strong> Settings → Privacy and security → Site settings → JavaScript → Allowed</li>
+              <li><strong>Firefox:</strong> Options → Privacy & Security → Permissions → Enable JavaScript</li>
+              <li><strong>Safari:</strong> Preferences → Security → Enable JavaScript</li>
+              <li><strong>Edge:</strong> Settings → Cookies and site permissions → JavaScript → Allowed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </noscript>
+    
+    <div id="root"></div>
+    
+    <!-- Loading spinner (shown while React loads) -->
+    <div class="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+    
+    <!-- PWA support script -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('%PUBLIC_URL%/service-worker.js').then(
+            function(registration) {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            },
+            function(err) {
+              console.log('ServiceWorker registration failed: ', err);
+            }
+          );
+        });
+      }
+      
+      // Remove loading spinner when app loads
+      window.addEventListener('DOMContentLoaded', function() {
+        const root = document.getElementById('root');
+        if (root && root.children.length > 0) {
+          document.querySelector('.loading-spinner').style.display = 'none';
+        }
+      });
+      
+      // Theme detection
+      const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+      if (prefersDarkScheme.matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    </script>
+  </body>
+</html>
