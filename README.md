@@ -1,83 +1,51 @@
-Smart Study Planner 📚
-A web application to help students plan, track, and manage study tasks securely.
+**Smart Study Planner**
 
-✨ Features
-User Authentication - Secure login/registration with JWT
+A professional web application designed to help students efficiently plan, track, and manage their study tasks. This full-stack solution provides secure user authentication, intelligent task organization, and real-time progress tracking to enhance academic productivity.
 
-Task Management - Create, read, update, and delete study tasks
+**Key Features**
 
-Priority Levels - Organize tasks by Low/Medium/High priority
+Secure Authentication System - JWT-based login/registration with password encryption
 
-Deadline Tracking - Never miss important deadlines
+Comprehensive Task Management - Full CRUD operations for study tasks with priority levels
 
-Subject Categorization - Group tasks by subject
+Smart Organization - Categorize tasks by subject with deadline tracking
 
-Task Filtering - Filter by status, priority, or subject
+Advanced Filtering - Dynamic filtering by status, priority, and subject
 
-Progress Dashboard - Visual statistics of study progress
+Progress Analytics - Dashboard with visual statistics and performance insights
 
-🛠️ Tech Stack
-Frontend
-React.js
+Responsive Design - Mobile-friendly interface built with modern frameworks
 
-Tailwind CSS
+**Technology Stack**
 
-Axios
+**Frontend:** React.js, Tailwind CSS, Axios, React Router
 
-React Router
+**Backend:** Node.js, Express.js, MySQL, JWT Authentication
 
-Backend
-Node.js + Express
+**Security:** bcrypt password hashing, protected API endpoints
 
-MySQL
+**Getting Started**
 
-JWT Authentication
+Database Setup: Configure MySQL with the provided schema
 
-bcrypt
+Backend Installation: cd backend && npm install
 
-📁 Project Structure
-text
-smart-study-planner/
-├── backend/          # Node.js + Express API
-├── frontend/         # React.js application
-└── README.md
-🚀 Quick Start
-Prerequisites
-Node.js (v14+)
+Frontend Installation: cd frontend && npm install
 
-MySQL (v8+)
+Environment Configuration: Set up required environment variables
 
-npm or yarn
+Launch Application: Start both backend and frontend servers
 
-Setup
-Clone the repository
+**Application Flow**
 
-Configure MySQL database
+Users register/login to access their personalized dashboard where they can create, organize, and track study tasks. The system provides filtering options to manage workload and visual analytics to monitor progress toward academic goals.
 
-Install dependencies:
+**Security Highlights**
 
-bash
-cd backend && npm install
-cd frontend && npm install
-Start the applications:
+Encrypted password storage using bcrypt
 
-bash
-# Backend (port 5000)
-cd backend && npm run dev
+Secure session management with JWT tokens
 
-# Frontend (port 3000)
-cd frontend && npm start
-📱 Screens
-Login/Register - User authentication
+Protected API routes with middleware validation
 
-Dashboard - Study statistics overview
-
-Task List - View all study tasks
-
-Task Form - Create/edit tasks
-
-Task Filters - Sort and filter tasks
-
-
-SQL injection prevention
-
+SQL injection prevention through parameterized queries
